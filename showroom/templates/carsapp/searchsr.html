@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3 class="text-center mb-3 heading">Showroom Details</h3>
+<div class="card card-showroom mb-3">
+    <div class="card-body">
+        <p class="showroom-name">
+            {{ showroom.showroom_name }},
+            <label class="showroom-city">{{ showroom.city}}</label>
+        </p>
+        <p>
+            
+        </p>
+            
+        <p>
+            <label style="font-style: italic;">{{ cars | length }} car{{ cars | length | pluralize }} available in this showroom</label>
+        </p>
+        <label style="text-decoration-line: underline; text-transform: lowercase;">Available cars</label>
+        {% for car in cars %}
+            <li style="list-style-type: none;">{{ car.brand }} {{ car.car_name }} (₹{{ car.price }})</li>
+        {% endfor %}
+    </div>
+</div>
+<a href="{% url 'carsapp:index' %}" class="btn btn-secondary mb-3">Home</a>
+
+{% endblock %}

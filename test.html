@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Toggle example using Pure JavaScript</title>
+</head>
+<body>
+    <p>
+    	<input type="button" value="Show DIV" id="bt" onclick="toggle(this)">
+    </p>
+
+    <!--The DIV element to toggle visibility. Its "display" property is set as "none". -->
+    <div style="border:solid 1px #ddd; padding:10px; display:none;" id="cont">
+        <div>
+            <label>Name:</label>
+            <div><input id="name" name="yourname" /></div>
+        </div>
+        <div>
+            <label>Age:</label>
+            <div><input name="age" id="yourage" /></div></div>
+        <div>
+            <label>Additional Information (optional):</label>
+            <div><textarea style="width:100%;" rows="5" cols="46"></textarea></div>
+        </div>
+    </div>
+</body>
+<script>
+    function toggle(ele) {
+        var cont = document.getElementById('cont');
+        if (cont.style.display == 'block') {
+            cont.style.display = 'none';
+
+            document.getElementById(ele.id).value = 'Show DIV';
+        }
+        else {
+            cont.style.display = 'block';
+            document.getElementById(ele.id).value = 'Hide DIV';
+        }
+    }
+</script>
+</html>

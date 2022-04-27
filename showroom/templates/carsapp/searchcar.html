@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3 class="text-center mb-3 heading">Car Details</h3>
+<div class="card card-car mb-3">
+    <div class="card-body">
+        <p class="card-car-name">{{ car.brand }} {{ car.car_name }}</p>
+        <p>Price: <label style="font-weight: bold;">₹{{ car.price }}</label></p>
+        <p>Brand: <label style="font-weight: bold;">{{ car.brand }}</label></p>
+        <p>Ratings: <label style="font-weight: bold;">{{ car.ratings }} star{{ car.ratings | pluralize }}</label></p>
+        <p>Year model: <label style="font-weight: bold;">{{ car.model_year }}</label></p>
+        <p>Showroom: <label style="font-weight: bold;">{{ showroom.showroom_name }}</label></p>
+        <p>City: <label style="font-weight: bold;">{{ showroom.city }}</label></p>      
+    </div>
+</div>
+<a href="{% url 'carsapp:index' %}" class="btn btn-secondary mb-3">Home</a>
+
+{% endblock %}

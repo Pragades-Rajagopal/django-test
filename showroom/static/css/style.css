@@ -1,0 +1,102 @@
+.navbar-black {
+    background-color: #000 !important;
+}
+
+.navbar-brand {
+    color: antiquewhite !important;
+    font-size: 24px !important;
+}
+
+.heading {
+    text-transform: uppercase;
+}
+
+.input-text {
+    border-radius: 4px;
+}
+
+.btn-search {
+    color: #000;
+    background-color: rgba(75, 75, 251, 0.5);
+    border-radius: 8px;
+    border: lightblue;
+}
+
+/* td.srsearch-div {
+    float: right !important;
+} */
+
+.search-icon {
+    transform: rotate(-45deg);
+    text-align: center;
+    font-weight: bold;
+}
+
+/* .srsearch {
+    padding-left: 10px;
+} */
+
+.card {
+    /* background-color: hsl(0, 79%, 72%, 20%) !important; */
+    background-color: hsla(33, 78%, 91%, 0.208) !important;
+    border-radius: 10px !important;
+}
+
+.card-car-index {
+    font-size: 18px !important;
+    font-weight: bold;
+}
+
+.card-showroom  {
+    background-color: hsl(120, 73%, 75%, 40%) !important;
+    text-align: center;
+    font-size: 18px !important;
+}
+
+.card-car {
+    background-color: hsl(203, 92%, 75%, 30%) !important;
+    text-align: center;
+    font-size: 18px !important;
+}
+
+.card-car-name {
+    font-size: 24px !important;
+    font-weight: bolder;
+}
+
+.detail-link {
+    text-decoration: none;
+    padding-left: 14px;
+}
+
+.ratings {
+    background-color: rgb(0, 247, 169);
+    font-size: 12px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.showroom-name {
+    font-size: 24px !important;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.showroom-city {
+    font-size: 18px !important;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+    float: right !important;
+}
+
+.search-div {
+    padding-top: 4px;
+}
