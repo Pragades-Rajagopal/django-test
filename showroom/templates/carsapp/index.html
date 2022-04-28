@@ -2,10 +2,7 @@
 
 {% block content %}
 <div class="search-div row">
-    <!-- <input type="radio" name="tab" value="igotnone" onclick="show1();" checked/>
-Search by Car
-<input type="radio" name="tab" value="igottwo" onclick="show2();"/>
-Search by Showroom -->
+
 <div class="index-search column" id="index-search-car">
     <table>
         <tr>
@@ -14,7 +11,7 @@ Search by Showroom -->
                     {% csrf_token %}
                     <input class="input-text" type="text" name="car_name" placeholder="Search with car name" list="car_list">
                     <datalist id="car_list">
-                        {% for result in cars_list %}
+                        {% for result in cars_list_sel %}
                             <option value="{{ result.car_name }}">{{ result.car_name }}</option>
                         {% endfor %}
                     </datalist>
@@ -35,7 +32,7 @@ Search by Showroom -->
                     
                         <input class="input-text" type="text" name="sr_name" placeholder="Search with showroom" list="sr_list">
                     <datalist id="sr_list">
-                        {% for result in showroom_list %}
+                        {% for result in showroom_list_sel %}
                             <option value="{{ result.showroom_name }}">{{ result.showroom_name }}</option>
                         {% endfor %}
                     </datalist>
@@ -47,7 +44,7 @@ Search by Showroom -->
     </table>
 </div>
 </div>
-<HR>
+
 <h2 class="text-center mb-3 heading">Cars list</h2>
 
 {% if cars_list %}
@@ -61,17 +58,6 @@ Search by Showroom -->
         </p>
     </div>
 </div>
-<script defer>
-    function show1(){
-  document.getElementById('index-search-car').style.display ='block';
-  document.getElementById('index-search-sr').style.display = 'none';
-}
- function show2(){
-    document.getElementById('index-search-car').style.display ='none';
-  document.getElementById('index-search-sr').style.display = 'block';
-  document.getElementById('index-search-sr').style.visibility = 'visible';
-}
-</script>
 
 {% endfor %}
 {% else %}
