@@ -10,7 +10,7 @@ This is a basic CRUD application developed using Django Framework
 
 ### Database 
 
-SQLite database is used which is the default databse that comes with Django. (Due to some issues, Postgres db is not used)
+SQLite database is used which is the default database that comes with Django. (Due to some issues, Postgres db is not used)
 
 ### Endpoint
 
