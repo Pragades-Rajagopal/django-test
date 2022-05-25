@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from audioop import reverse
+from django.shortcuts import render, HttpResponseRedirect
 from django.http import Http404
 from .models import Showroom, Cars
 
@@ -51,3 +52,25 @@ def searchsr(request):
 
     return render(request, 'carsapp/searchsr.html', {'cars': cars, 'showroom': showroom})
     
+
+def addcar(request):
+    showroom = Showroom.objects.all().values('showroom_name').distinct()
+    return render(request, 'carsapp/addcar.html', {'showroom': showroom})
+
+def postcar(request):
+    showroom = Showroom.objects.all().values('showroom_name').distinct()
+    car_name = request.POST.get('car_name')
+    price = request.POST.get('price')
+    ratings = request.POST.get('ratings')
+    brand = request.POST.get('brand')
+    year = request.POST.get('year')
+    showroom_nm = request.POST.get('showroom')
+
+    try: 
+        showroom_check = Showroom.objects.get(showroom_name=showroom_nm)
+    except (KeyError, Showroom.DoesNotExist):
+        return render(request, 'carsapp/addcar.html', {'showroom': showroom, 'error_msg': 'Showroom does not exist'})
+    else:
+        car = Cars(car_name=car_name, price=price, ratings=ratings, brand=brand, model_year=year, showroom_id=showroom_check.id)
+        car.save()
+        return render(request, 'carsapp/addcar.html', {'showroom': showroom, 'error_msg': 'Car added successfully'})
